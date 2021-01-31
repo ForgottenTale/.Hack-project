@@ -8,7 +8,7 @@ import Payment from '../components/payment'
 import React from 'react';
 import {  Text } from 'react-native';
 import QRcode from '../components/QRcode';
-
+import Owner from '../components/ownerDashboard'; 
 
 
 const screens = {
@@ -38,6 +38,12 @@ const screens = {
     },
     payment:{
         screen: Payment,
+        navigationOptions: {
+            headerTitle:  () => (<Text style={{ fontFamily: "bold" }}>QR code</Text> )
+        },
+    },
+    owner:{
+        screen: Owner,
         navigationOptions: {
             headerTitle:  () => (<Text style={{ fontFamily: "bold" }}>QR code</Text> )
         },

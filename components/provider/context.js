@@ -13,13 +13,10 @@ export function FoodProvider({ children }) {
 
     const [state, setS] = useState([])
 
-    function Add(obj) {
-        setS(obj);
-
-    }
+ 
     var data = {
         data: state,
-        Add
+        
     }
     return (
         <FoodContext.Provider value={data} >
