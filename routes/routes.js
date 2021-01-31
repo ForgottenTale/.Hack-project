@@ -4,7 +4,7 @@ import Dashboard from '../components/Dashboard';
 import parkingLot from '../components/parkingLot';
 import map from '../components/map'
 import Payment from '../components/payment'
-
+import Login from '../components/login'
 import React from 'react';
 import {  Text } from 'react-native';
 import QRcode from '../components/QRcode';
@@ -12,6 +12,10 @@ import Owner from '../components/ownerDashboard';
 
 
 const screens = {
+
+    login:{
+        screen: Login,
+    },
     Dashboard: {
         screen: Owner,
         navigationOptions: {

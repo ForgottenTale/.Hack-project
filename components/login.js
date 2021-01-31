@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold, } from '@expo-google-fonts/montserrat';
 import { TextInput, Button } from 'react-native-paper';
 import Loader from './loader';
@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 
 export default function Login() {
 
-    let [ fontsLoaded, error ] = useFonts({
+    let [fontsLoaded, error] = useFonts({
         regular: Montserrat_400Regular,
         bold: Montserrat_700Bold
     });
@@ -19,40 +19,44 @@ export default function Login() {
     const [error2, setError2] = React.useState(false);
     const [loader, setLoader] = React.useState(false);
 
-    const pressHandler = () => {
-
-        setLoader(true);
-        if (text === '' || password === '') {
-            setError2(true);
+    const pressHandler = ({ navigation }) => {
+        if (text == 'owner') {
+            navigation.navigate('owner');
         }
         else {
-            firebase.auth()
-                .signInWithEmailAndPassword(text, password)
-                .then(() => {
-                    console.log('User account created & signed in!');
-                    setLoader(false);
-                })
-                .catch(error => {
-                    if (error.code === 'auth/email-already-in-use') {
-                        console.log('That email address is already in use!');
+            setLoader(true);
+            if (text === '' || password === '') {
+                setError2(true);
+            }
+            else {
+                firebase.auth()
+                    .signInWithEmailAndPassword(text, password)
+                    .then(() => {
+                        console.log('User account created & signed in!');
                         setLoader(false);
-                    }
+                    })
+                    .catch(error => {
+                        if (error.code === 'auth/email-already-in-use') {
+                            console.log('That email address is already in use!');
+                            setLoader(false);
+                        }
 
-                    if (error.code === 'auth/invalid-email') {
-                        console.log('That email address is invalid!');
-                        setError(true)
-                        setLoader(false);
-                    }
+                        if (error.code === 'auth/invalid-email') {
+                            console.log('That email address is invalid!');
+                            setError(true)
+                            setLoader(false);
+                        }
 
-                    console.error(error);
-                });
+                        console.error(error);
+                    });
+            }
         }
     }
     if (!fontsLoaded) {
-        return <Loader/>
+        return <Loader />
     }
-    else if(loader){
-        return <Loader/>
+    else if (loader) {
+        return <Loader />
     }
     else {
 
