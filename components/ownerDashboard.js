@@ -7,10 +7,10 @@ import * as firebase from 'firebase';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
-export default function DeviceConnect({ navigation }) {
+export default function dashboard2({ navigation }) {
 
 
-    var crops = [{
+    var values = [{
         revenue: "1200",
         bookings: "6",
         freeslots: "6"
