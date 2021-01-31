@@ -13,7 +13,7 @@ import Owner from '../components/ownerDashboard';
 
 const screens = {
     Dashboard: {
-        screen: Dashboard,
+        screen: Owner,
         navigationOptions: {
             headerTitle:  () => (<Text style={{ fontFamily: "bold" }}>Dashboard</Text> )
         },
@@ -45,7 +45,7 @@ const screens = {
     owner:{
         screen: Owner,
         navigationOptions: {
-            headerTitle:  () => (<Text style={{ fontFamily: "bold" }}>QR code</Text> )
+            headerTitle:  () => (<Text style={{ fontFamily: "bold" }}>Dashboard</Text> )
         },
     }
 
