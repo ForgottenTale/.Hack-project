@@ -13,7 +13,7 @@ export default function Map({ navigation }) {
 
     const origin = { latitude: 37.3318456, longitude: -122.0296002 };
     const destination = { latitude: 37.771707, longitude: -122.4053769 };
-    const GOOGLE_MAPS_APIKEY = 'AIzaSyDLhxbtMn3p_3HES22Lu3-VKHGaM94yCro';
+    const GOOGLE_MAPS_APIKEY = '';
 
     const [state, setState] = useState({
         latitude:  37.78825,

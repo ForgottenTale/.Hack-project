@@ -20,10 +20,8 @@ export default function Login() {
     const [loader, setLoader] = React.useState(false);
 
     const pressHandler = ({ navigation }) => {
-        if (text == 'owner') {
-            navigation.navigate('owner');
-        }
-        else {
+       
+        
             setLoader(true);
             if (text === '' || password === '') {
                 setError2(true);
@@ -50,7 +48,7 @@ export default function Login() {
                         console.error(error);
                     });
             }
-        }
+        
     }
     if (!fontsLoaded) {
         return <Loader />

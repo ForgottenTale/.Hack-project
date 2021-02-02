@@ -13,11 +13,9 @@ import Owner from '../components/ownerDashboard';
 
 const screens = {
 
-    login:{
-        screen: Login,
-    },
+
     Dashboard: {
-        screen: Owner,
+        screen: Dashboard,
         navigationOptions: {
             headerTitle:  () => (<Text style={{ fontFamily: "bold" }}>Dashboard</Text> )
         },
